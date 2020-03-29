@@ -110,8 +110,8 @@ parameters = {'W1': np.array([[ 1.62434536, -0.61175641, -0.52817175],
 cost = computeCost(A3,Y,parameters,'l2',0.1)
 
 def compute_dZ(dA,Activation_Cache,activation):
-    '''Compute dZ usinf=g chain rule i.e.,dZ*dA. Reason for this function was
-    to compute the derivative of activation functions'''
+    '''Compute dZ using chain rule i.e.,dZ*dA. Reason for this function was
+    to compute the derivative of z'''
     '''Required:
        dA : Derivative of cost w.r.t A
        Activation_Cache:Values of the perceptrons after applying the activation functions
@@ -148,7 +148,7 @@ def linear_activation_backward(dA,cache,activation,_lambda=0.01):
     Required:
         compute_derivatives() function that returns dW,db and dA_prev 
         dA : Derivative of current layer perceptrons
-        cache: linear-containg W,A_prev,b in oreder and activation-containing A
+        cache: linear-containg W,A_prev,b in order and activation-containing A
         activation: Type of activation function required to compute dZ'''
     Linear_Cache,Activation_Cache = cache
     dZ = compute_dZ(dA,Activation_Cache,activation)
@@ -158,7 +158,7 @@ def linear_activation_backward(dA,cache,activation,_lambda=0.01):
 
 
 def backward_propagation(AL,Y,caches):
-    '''Combine all steps of backproppagation for one epoch
+    '''Combine all steps of backpropagation for one epoch
     Required:
         linear_activation_backward() function
         AL : Activation values of the last layer
