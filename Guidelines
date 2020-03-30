@@ -34,7 +34,7 @@ Consider Following Steps:-
 
 ## Bonus Steps
 -- Try using transfer learning for better results if you don't have enough dat for your features.
--- Consider combining Component and End to End based learning to get good results even if you don't have a hige dataset.
+-- Consider combining Component and End to End based learning to get good results even if you don't have a huge dataset.
 -- Consider Reading the case Studies of Peacetopia and Autonomous Driving by Deeplearning.ai . You can find it online as well as in Machine Learning--> Project_Ideas.
 -- [Private: Consider reading your notes in Book3 for understanding how to tackle each of the above steps.]
 
