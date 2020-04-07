@@ -1,3 +1,20 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  7 21:30:08 2020
+
+@author: mahyar
+"""
+
+import numpy as np
+
+def sigmoid(Z):
+	return 1/(1+np.exp(-Z))
+
+def softmax(x):
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum(axis=0)
+
+
 def lstm_cell_forward(xt, a_prev, c_prev, parameters):
 
 #Retrieve all the weights and biases from parameters

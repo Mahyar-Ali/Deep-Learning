@@ -1,5 +1,21 @@
+# python3 
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  7 21:28:44 2020
+
+@author: mahyar
+"""
+
+import numpy as np
 
 #Simple RNN
+
+def sigmoid(Z):
+	return 1/(1+np.exp(-Z))
+
+def softmax(x):
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum(axis=0)
 
 def rnn_cell_forward(xt,a_prev,parameters):
     
@@ -17,7 +33,7 @@ def rnn_cell_forward(xt,a_prev,parameters):
     #Cache all the necessary variables
     cache = (a_next, a_prev, xt, parameters)
     
-    return a_next,yt_pred,caches
+    return a_next,yt_pred,cache
     
 
 def rnn_forward(x, a0, parameters):
@@ -33,13 +49,13 @@ def rnn_forward(x, a0, parameters):
     #To keep track of the computations at each step
     caches =[]
     
-    a_next = a_0
+    a_next = a0
     
     for t in range(T_x):
         
-        xt = [:,:,t]
+        xt = x[:,:,t]
         
-        a_next,yt_pred,caches = rnn_cell_forward(xt,a_next,parameters)
+        a_next,yt_pred,cache = rnn_cell_forward(xt,a_next,parameters)
         
         #Store the activations and output at each time step
         a[:,:,t] = a_next
