@@ -57,3 +57,4 @@ Consider Following Steps:-
 -- Start with a project to gain some momentum and then move onto bigger ones.
 -- AI transmission playbook
 -- For brainstorming AI projects, first consult with the person that is a specialized person in that field.(or business)
+-- Laxk of explanability can force people not to believe like in case of X-ray scans.
